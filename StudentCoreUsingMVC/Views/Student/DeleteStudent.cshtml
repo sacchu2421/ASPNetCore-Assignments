@@ -1,0 +1,23 @@
+﻿@using StudentCoreUsingMVC.Models
+@using StudentCoreUsingMVC.Repository
+@model StudentCoreUsingMVC.Models.Student
+@{
+    ViewBag.Title = "Delete Student by Id";
+}
+
+<html>
+
+    <div>
+         @using(Html.BeginForm("DeleteStudentById", "Student", FormMethod.Post))
+         {
+        @Html.Label("Student Id")
+        <br/>
+        @Html.TextBox("Id")
+        <br/>
+      <input type="submit" name="btnSubmit" value="Delete"/>
+         }
+      
+    </div>
+
+
+</html>

@@ -1,0 +1,40 @@
+﻿@using ProjectShoppingMVC.ViewModel
+@using ProjectShoppingMVC.Models
+@model ProductViewModel
+@{
+    ViewBag.Title = "GetProducts";
+}
+
+<h2>GetProducts</h2>
+<br/>
+<a href="/Product/CreateProduct">Insert Product</a><br />
+
+<a href="/Product/DeleteProduct">Delete Product</a><br />
+
+<a href="/Product/UpdateProduct">Update Product</a><br/>
+ <div>
+     <br/>
+    <table  border="1"style="align-content"align="center"cellspacing="3">
+        <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Category</th>
+        <th>Price</th>
+        <th>Image</th>
+        <th>Description</th>
+        </tr>
+        @foreach (Product item in Model.products)
+        {
+         <tr>
+        <td>@item.ProductId</td>
+        <br/>
+        <td>@item.ProductName</td> <br/>
+          <td>@item.ProductCategory</td> <br/>
+          <td>@item.Productprice</td> <br/>
+          <td><img src="@Html.DisplayFor(x=>item.ProductImage)" height="113" width="113" border="0" /></td> <br/>
+          <td>@item.ProductDescription</td>
+        </tr>
+        }
+
+   </table/>
+ </div>

@@ -1,0 +1,29 @@
+﻿@using EmployeesDepartmentProjectApi.Models
+@model IEnumerable<Employee>
+@{
+    ViewBag.Title = "GetEmployeesDepartmentAndProject";
+}
+
+<h2>GetEmployeesDepartmentAndProject</h2>
+<div>
+    <table>
+        <tr>
+           
+            <th>Employee Name</th>
+            <th>Project Id</th>
+            <th>Department Id</th>
+        </tr>
+
+        @foreach (Employee emp in Model)
+        { 
+            <tr>
+                <td>@emp.Id</td>
+                <td>@emp.Name</td>
+                <td>@emp.ProjectId</td>
+                <td>@emp.DeptId</td>
+            </tr>
+        }
+
+    </table>
+
+</div>
